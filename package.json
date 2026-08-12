@@ -1,0 +1,70 @@
+{
+  "name": "@dev4press/field-up",
+  "version": "0.9.0",
+  "description": "A passive, multi-file upload field for native multipart forms with drop zone and validation.",
+  "type": "module",
+  "main": "./dist/field-up.umd.js",
+  "module": "./dist/field-up.js",
+  "types": "./dist/types/index.d.ts",
+  "style": "./dist/field-up.css",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/field-up.js",
+      "require": "./dist/field-up.umd.js"
+    },
+    "./style.css": "./dist/field-up.css"
+  },
+  "files": [
+    "dist",
+    "license.txt",
+    "readme.md",
+    "changelog.md",
+    "documentation.md"
+  ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dev4press/fieldup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dev4press/fieldup/issues"
+  },
+  "homepage": "https://www.dev4press.com/",
+  "keywords": [
+    "upload",
+    "typescript",
+    "sass"
+  ],
+  "author": "Milan Petrovic",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "lint:ts": "eslint \"src/**/*.ts\" \"test/**/*.ts\" \"vite.config.ts\"",
+    "lint:scss": "stylelint \"src/**/*.scss\"",
+    "lint": "npm run lint:ts && npm run lint:scss",
+    "format": "prettier --write \"src/**/*.{ts,scss}\" \"test/**/*.ts\" \"vite.config.ts\"",
+    "format:check": "prettier --check \"src/**/*.{ts,scss}\" \"test/**/*.ts\" \"vite.config.ts\"",
+    "test": "vitest run",
+    "build": "npm run check && vite build && tsc -p tsconfig.lib.json",
+    "predev": "npm run build",
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.1",
+    "prettier": "^3.9.6",
+    "sass": "^1.102.0",
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard-scss": "^16.0.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.2.1",
+    "vitest": "^4.1.11"
+  }
+}

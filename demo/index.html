@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A passive, multi-file upload form with previews and captions.">
+  <title>FieldUp</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/dist/field-up.css?direct">
+  <script type="module">
+    import { FieldUp } from '/dist/field-up.js';
+
+    FieldUp.mountAll();
+  </script>
+</head>
+<body>
+  <main class="field-up-page-shell">
+    <section class="field-up-upload-card" aria-labelledby="page-title">
+      <div class="field-up-intro">
+        <p class="field-up-eyebrow">Media library</p>
+        <h1 id="page-title">Add your files</h1>
+        <p class="field-up-intro-copy">Choose the files you want to send. Nothing is uploaded until you submit this form.</p>
+      </div>
+
+      <form
+        class="field-up-upload-form"
+        id="upload-form"
+        action="upload.php"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <input
+          id="file-picker"
+          class="field-up-visually-hidden"
+          type="file"
+          name="files[]"
+          multiple
+          data-field-up
+        >
+        <div class="field-up-form-actions">
+          <p class="field-up-submit-note">Files and captions are sent as one multipart form request.</p>
+          <button class="field-up-button field-up-button-primary" type="submit">Submit files</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

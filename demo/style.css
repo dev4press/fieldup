@@ -1,0 +1,149 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    background:
+            radial-gradient(circle at 12% 8%, rgba(99, 91, 255, 0.11), transparent 28rem),
+            #f4f6fb;
+    color: #1f2937;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.field-up-page-shell {
+    display: grid;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    padding: 48px 20px;
+    place-items: center;
+}
+
+.field-up-upload-card {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 760px;
+    min-width: 0;
+    padding: clamp(28px, 6vw, 58px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 28px;
+    background: var(--field-up-surface);
+}
+
+.field-up-intro {
+    max-width: 540px;
+    margin-bottom: 34px;
+}
+
+.field-up-eyebrow {
+    margin: 0 0 12px;
+    color: var(--field-up-accent);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+h1,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: -0.055em;
+    line-height: 1.05;
+}
+
+.field-up-intro-copy {
+    margin-bottom: 0;
+    color: var(--field-up-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.field-up-form-actions {
+    display: flex;
+    margin-top: 34px;
+    padding-top: 22px;
+    border-top: 1px solid var(--field-up-line);
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.field-up-submit-note {
+    max-width: 340px;
+    margin-bottom: 0;
+    color: var(--field-up-muted);
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+.field-up-form-actions .field-up-button {
+    display: inline-flex;
+    box-sizing: border-box;
+    min-height: 48px;
+    padding: 0 24px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    box-shadow: 0 8px 18px rgba(99, 91, 255, 0.16);
+    cursor: pointer;
+    transition:
+        background 160ms ease,
+        box-shadow 160ms ease,
+        transform 160ms ease;
+}
+
+.field-up-button-primary {
+    min-width: 150px;
+    background: var(--field-up-accent);
+    color: #fff;
+}
+
+.field-up-form-actions .field-up-button:hover {
+    transform: translateY(-1px);
+}
+
+.field-up-button-primary:hover {
+    background: var(--field-up-accent-dark);
+    box-shadow: 0 10px 22px rgba(99, 91, 255, 0.24);
+}
+
+.field-up-form-actions .field-up-button:focus-visible {
+    outline: 3px solid rgba(99, 91, 255, 0.3);
+    outline-offset: 3px;
+}
+
+.field-up-form-actions .field-up-button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+    .field-up-page-shell {
+        padding: 20px 12px;
+    }
+
+    .field-up-upload-card {
+        border-radius: 20px;
+    }
+
+    .field-up-form-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .field-up-button-primary {
+        width: 100%;
+    }
+}
